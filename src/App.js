@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+//import {div, header, img, h1, p, code} from 'react-hyperscript-helpers';
+const h = require('react-hyperscript');
+const {div, header, img, h1, p, code} = require('hyperscript-helpers')(h);
+//import {div, header, img, h1, p, code} from 'react';
 
-class App extends Component {
+/* class App extends Component {
   render() {
     return (
       <div className="App">
@@ -15,6 +19,22 @@ class App extends Component {
         </p>
       </div>
     );
+  }
+}
+ */
+class App extends Component {
+  render() {
+    return div({className:"App"},[
+        header( {className:"App-header"},[
+          img( {src: logo, className:"App-logo", alt:"logo"}),
+          h1( {className:"App-title"}, "Welcome to React")
+        ]),
+        p( {className:"App-intro"},[
+          "To get started, edit ", 
+          code("src/App.js"),
+          " and save to reload."
+        ])
+      ]);
   }
 }
 
